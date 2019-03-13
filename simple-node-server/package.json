@@ -1,0 +1,12 @@
+{
+  "name": "simple-node-server",
+  "version": "1.0.0",
+  "description": "Simple node server",
+  "main": "index.js",
+  "repository": "https://github.com/joakimia/nodeJS.git",
+  "author": "joakimia <joakimamundsen91@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
