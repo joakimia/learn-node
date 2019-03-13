@@ -10,7 +10,8 @@ router.get('/', (request, response, next) => {
 });
 
 router.get('/:userId', (request, response, next) => {
-    const id = request.params.userId
+    const id = request.params.userId;
+
     if (id === 'joakim') {
         response.status(SUCCESS_STATUS_CODE).json({
             userName: 'joakim',
@@ -26,21 +27,36 @@ router.get('/:userId', (request, response, next) => {
 });
 
 router.post('/', (request, response, next) => {
+    const user = {
+        userName: request.body.userName,
+        displayName: request.body.displayName
+    };
+
     response.status(SUCCESS_STATUS_CODE).json({
+        createdUser: user,
         message: 'User created.'
-    })
+    });
 });
 
 router.patch('/', (request, response, next) => {
+    const user = {
+        displayName: request.body.displayName
+    }
     response.status(SUCCESS_STATUS_CODE).json({
+        updatedUser: user, 
         message: 'User updated.'
-    })
+    });
 });
 
 router.delete('/', (request, response, next) => {
+    const user = {
+        userName: request.body.userName
+    };
+
     response.status(SUCCESS_STATUS_CODE).json({
+        deletedUser: user,
         message: 'User deleted.'
-    })
+    });
 });
 
 module.exports = router;
